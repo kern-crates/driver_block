@@ -18,7 +18,7 @@ const BLOCK_SIZE: usize = 0x200;    // 512
 pub extern "Rust" fn runtime_main(_cpu_id: usize, _dtb_pa: usize) {
     axlog2::init();
     axlog2::set_max_level("info");
-    info!("[rt_ramdisk]: ...");
+    info!("\n[rt_ramdisk]: ...");
 
     let start = align_up_4k(virt_to_phys(_ekernel as usize));
     let end = align_down_4k(axconfig::PHYS_MEMORY_END);
