@@ -1,7 +1,7 @@
 #![no_std]
 
 #[macro_use]
-extern crate axlog;
+extern crate axlog2;
 extern crate alloc;
 use alloc::vec;
 
@@ -16,13 +16,13 @@ const BLOCK_SIZE: usize = 0x200;    // 512
 /// Entry
 #[no_mangle]
 pub extern "Rust" fn runtime_main(_cpu_id: usize, _dtb_pa: usize) {
-    axlog::init();
-    axlog::set_max_level("info");
+    axlog2::init();
+    axlog2::set_max_level("info");
     info!("[rt_ramdisk]: ...");
 
     let start = align_up_4k(virt_to_phys(_ekernel as usize));
     let end = align_down_4k(axconfig::PHYS_MEMORY_END);
-    axalloc::init(phys_to_virt(start), end - start);
+    axalloc::global_init(phys_to_virt(start), end - start);
 
     let mut disk = ramdisk::RamDisk::new(0x1000);
     assert_eq!(disk.device_type(), DeviceType::Block);
