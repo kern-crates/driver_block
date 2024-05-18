@@ -15,6 +15,5 @@ bcm2835-sdhci = ["dep:bcm2835-sdhci"]
 default = []
 
 [dependencies]
-log = "0.4"
-driver_common = { path = "ssh://git@github.com/shilei-massclouds/driver_common" }
+driver_common = { git = "ssh://git@github.com/shilei-massclouds/driver_common" }
 bcm2835-sdhci = { git = "https://github.com/lhw2002426/bcm2835-sdhci.git", rev = "e974f16", optional = true }
