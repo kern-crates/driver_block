@@ -1,0 +1,11 @@
+{
+  "name": "driver_block",
+  "description": "Block driver for lkmodel.",
+  "authors": [{
+    "name": "Shi Lei",
+    "email": "shi_lei@massclouds.com"
+  }],
+  "keywords": ["block", "driver"],
+  "repo": "shilei-massclouds/driver_block",
+  "doc_url": "https://github.com/shilei-massclouds/driver_block/blob/main/README.md"
+}

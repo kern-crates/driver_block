@@ -1,0 +1,9 @@
+[workspace]
+resolver = "2"
+members = [
+    "driver_block",
+    "rt_driver_block",
+]
+
+[profile.release]
+lto = true
